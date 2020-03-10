@@ -1,0 +1,135 @@
+#:kivy 1.0 
+<RegistrodeUsuario>:
+    id: main_win
+    orientation: 'vertical'
+    spacing: 10
+    space_x: self.size[1]/10
+    
+    canvas:
+        Color: 
+            rgba: (1,1,1,.8)
+        Rectangle: 
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50 
+        canvas.before:
+            Color: 
+                rgba: (.06,.45,.45,.7)
+            Rectangle: 
+                size: self.size
+                pos: self.pos
+
+    FloatLayout: 
+        Image:
+            source: 'logo.png'
+            size_hint: None, None
+            height: 200
+            width: 200
+            pos_hint: {'center_x': .5, 'y': .3}
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: main_win.space_x, 40
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: 150
+            Label: 
+                text: 'Registro de usuario'
+                color: 0,0,0,1
+                font_size: 19
+            
+            TextInput:
+                id: username_field
+                hint_text: 'Nombre'
+                multiline: False
+                focus: True
+                size_hint_y: None
+                height: 30
+                on_text_validate: pwd_field.focus = True
+            TextInput:
+                id: lastname_field
+                hint_text: 'Apellido'
+                multiline: False
+                focus: True
+                size_hint_y: None
+                height: 30
+                on_text_validate: pwd_field.focus = True
+        GridLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: 40
+            cols: 7
+            Label:
+                text: 'Sexo'
+                color: 0,0,0,1
+            Label:
+                text: 'F'
+                color: 0,0,0,1
+            CheckBox: 
+                active: True
+                color: 0,0,0,1
+            Label:
+                text: 'M'
+                color: 0,0,0,1
+            CheckBox: 
+                active: False
+                color: 0,0,0,1
+            Label:
+                text: 'Otros'
+                color: 0,0,0,1
+            CheckBox: 
+                active: False
+                color: 0,0,0,1
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: 150
+            Label:
+                id: info
+                text: ''
+                markup: True
+                size_hint_y: None
+                height: 20
+            TextInput:
+                id: lastname_field
+                hint_text: 'Fecha de nacimiento'
+                multiline: False
+                focus: True
+                size_hint_y: None
+                height: 30
+                on_text_validate: pwd_field.focus = True
+            TextInput:
+                id: lastname_field
+                hint_text: 'Ciudad'
+                multiline: False
+                focus: True
+                size_hint_y: None
+                height: 30
+                on_text_validate: pwd_field.focus = True
+            TextInput:
+                id: lastname_field
+                hint_text: 'Direccion'
+                multiline: False
+                focus: True
+                size_hint_y: None
+                height: 30
+                on_text_validate: pwd_field.focus = True
+            Button: 
+                text: 'Registrarse'
+                size_hint_y: None
+                height: 40
+                background_color: (.06,.45,.45,.7)
+                background_normal: ''
+        
+
+
+                
+            

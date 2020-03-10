@@ -1,0 +1,7 @@
+1 principal
+2 registrodeusuario
+3 login1
+4 nuevacompra
+5 main
+6 precioproducto
+7 listacompras

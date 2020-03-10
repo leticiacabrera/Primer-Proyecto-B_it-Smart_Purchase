@@ -1,0 +1,129 @@
+#:kivy 1.0 
+<FlatButton@ButtonBehavior+Label>:
+    font_size: 16
+<SigninWindow>:
+    id: main_win
+    orientation: 'vertical'
+    spacing: 10
+    space_x: self.size[1]/10
+    
+    canvas.before:
+        Color: 
+            rgba: (1,1,1,.8)
+        Rectangle: 
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50 
+        canvas.before:
+            Color: 
+                rgba: (.06,.45,.45,.7)
+            Rectangle: 
+                size: self.size
+                pos: self.pos
+        AnchorLayout:
+            size_hint_x: None
+            anchor_x: 'right'
+            FlatButton:
+                text: 'x'
+    
+    FloatLayout: 
+        Image:
+            source: 'logo.png'
+            size_hint: None, None
+            height: 70
+            width: 70
+            pos_hint: {'x': .7, 'y': 1}
+            background_normal: ''
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: main_win.space_x, 50
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y: None
+            height: 400
+            Label:
+                text: 'Lista de compras'
+                color: 0,0,0,1
+                size_hint_y: None
+                height: 30
+            
+            GridLayout:
+                cols: 4
+                rows: 30
+                row_default_height: 30
+                Label:
+                    text: 'Nombre'
+                    color: 0,0,0,1
+                Label:
+                    text: 'Cantidad'
+                    color: 0,0,0,1
+                Label:
+                    text: 'Precio ($)'
+                    color: 0,0,0,1
+                Label:
+                    text: 'Eliminar'
+                    color: 0,0,0,1
+                Label:
+                    text: 'Item 1'
+                    color: 0,0,0,1
+                Label:
+                    text: '2'
+                    color: 0,0,0,1
+                Label:
+                    text: '180'
+                    color: 0,0,0,1
+                CheckBox:
+                    color: 0,0,0,1
+                Label:
+                    text: 'Item 2'
+                    color: 0,0,0,1
+                Label:
+                    text: '1'
+                    color: 0,0,0,1
+                Label:
+                    text: '300'
+                    color: 0,0,0,1
+                CheckBox:
+                    color: 0,0,0,1
+                Label:
+                    text: 'Item 3'
+                    color: 0,0,0,1
+                Label:
+                    text: '1'
+                    color: 0,0,0,1
+                Label:
+                    text: '30'
+                    color: 0,0,0,1
+                CheckBox:
+                    color: 0,0,0,1
+                 
+            Label:
+                id: sp
+                size_hint_y: None
+                height: 30
+            Button:
+                text: 'Ingresar producto'
+                size_hint_y: None
+                height: 40
+                background_color: (.06,.45,.45,.7)
+                background_normal: ''
+                on_release: root.validate_user()
+                space: 20
+            Button:
+                text: root.stringProperty_pwd_field
+                size_hint_y: None
+                height: 40
+                background_color: (.06,.45,.45,.7)
+                background_normal: ''
+                on_release: root.validate_user()
+            Button:
+                text: 'Cerrar compra'
+                size_hint_y: None
+                height: 40
+                background_color: (.06,.45,.45,.7)
+                background_normal: ''
+                on_release: root.validate_user()

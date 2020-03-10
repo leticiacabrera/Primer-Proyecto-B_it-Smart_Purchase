@@ -1,0 +1,52 @@
+#:kivy 1.0 
+<Window>:
+    id: main_win
+    orientation: 'vertical'
+    spacing: 10
+    space_x: self.size[1]/10
+    canvas.before:
+        Color: 
+            rgba: (1,1,1,.8)
+        Rectangle: 
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color: 
+                rgba: (.06,.45,.45,.7)
+            Rectangle: 
+                size: self.size
+                pos: self.pos
+    FloatLayout:
+        Image:
+            source: 'IMG_20200308_161919.png'
+            size_hint: None, None
+            height: 500
+            width: 500
+            pos_hint: {'center_x': .5, 'y': -0.7}
+    BoxLayout:
+        orientation: 'vertical'
+        padding: main_win.space_x, 10
+        spacing: 20
+        Label:
+            text: 'Precio del producto: $$$$'
+            size_hint_y: None
+            height: 30
+            color: (0,0,0,1)
+        TextInput:
+            id: username_field
+            multiline: False
+            hint_text: 'Cantidad'
+            focus: True
+            size_hint_y: None
+            height: 30
+        Button:
+            text: 'Agregar a la lista'
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45,.7)
+            background_normal: ''
+            on_release: root.validate_user()
+                    
